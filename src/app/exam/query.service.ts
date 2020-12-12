@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 
 export interface TitleInfo {
   title: string;
+  body: string;
   id: number;
 }
 

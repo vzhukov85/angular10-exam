@@ -19,6 +19,7 @@ export class TitleTableComponent implements OnInit {
       const titles: TitleInfo[] = data.map((item) => {
         return {
           title: item.title,
+          body: item.body,
           id: parseInt(item.id),
         };
       });
@@ -26,8 +27,8 @@ export class TitleTableComponent implements OnInit {
     });
   }
 
-  openDialog(title: string, id: number): void {
-    this.dialog.open(TitleInfoComponent, { data: { title, id } });
+  openDialog(body: string, id: number): void {
+    this.dialog.open(TitleInfoComponent, { data: { body, id } });
   }
 
   get displayedColumns(): string[] {

@@ -10,14 +10,14 @@ import { filter, pairwise } from 'rxjs/operators';
 })
 export class TitleInfoComponent implements OnInit {
 
-  title: string;
+  body: string;
   id: number;
   routerSubscription: any;
 
   constructor(public dialogRef: MatDialogRef<TitleInfoComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private router: Router) { 
-      this.title = data.title;
+      this.body = data.body;
       this.id = data.id;
     }
 
