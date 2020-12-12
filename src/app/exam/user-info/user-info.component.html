@@ -1,0 +1,98 @@
+<mat-card>
+<form [formGroup]="userInfoFrom" (ngSubmit)="check()">
+  <mat-grid-list cols="4" rowHeight="100px"> 
+    <mat-grid-tile colspan="1" rowspan="1">
+        <mat-form-field appearancece="fill">
+            <mat-label>Имя</mat-label>
+            <input matInput 
+            type="text"
+            formControlName="name" 
+            required/>
+        </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1">
+        <mat-form-field appearancece="fill">
+            <mat-label>Email</mat-label>
+            <input matInput 
+            type="email"
+            formControlName="email" 
+            required email/>
+            <mat-error *ngIf="userInfoFrom.get('email').hasError('email')">
+                Должен быть указан корректный email
+            </mat-error>
+        </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1">
+        <mat-form-field appearancece="fill">
+            <mat-label>Улица</mat-label>
+            <input matInput 
+            type="text"
+            formControlName="street" 
+            required/>
+        </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1">
+        <mat-form-field appearancece="fill">
+            <mat-label>Аппартаменты</mat-label>
+            <input matInput 
+            type="text"
+            formControlName="suite" 
+            required/>
+        </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1">
+        <mat-form-field appearancece="fill">
+            <mat-label>Город</mat-label>
+            <input matInput 
+            type="text"
+            formControlName="city" 
+            required/>
+        </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1">
+        <mat-form-field appearancece="fill">
+            <mat-label>Индекс</mat-label>
+            <input matInput 
+            type="text"
+            formControlName="zipcode" 
+            required/>
+            <mat-error *ngIf="userInfoFrom.get('zipcode').hasError('pattern')">
+                Должен соотвествовать паттерну {{indexMask}}
+            </mat-error>
+        </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1">
+        <mat-form-field appearancece="fill">
+            <mat-label>Телефон</mat-label>
+            <input matInput 
+            type="text"
+            formControlName="phone" 
+            required/>
+            <mat-error *ngIf="userInfoFrom.get('phone').hasError('pattern')">
+                Должен соотвествовать паттерну {{phoneMask}}
+            </mat-error>
+        </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1">
+        <mat-form-field appearancece="fill">
+            <mat-label>Web-сайт</mat-label>
+            <input matInput 
+            type="text"
+            formControlName="website" 
+            required
+            url-Validator/>
+            <mat-error *ngIf="userInfoFrom.get('website').hasError('websiteDesc')">
+                {{userInfoFrom.get('website').getError('websiteDesc')}}
+            </mat-error>
+        </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1">
+        <span>Место работы: {{workPlace}}</span>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <div class="button-block">
+    <button mat-raised-button type="submit">Проверка</button>
+  </div>
+</form>
+</mat-card>

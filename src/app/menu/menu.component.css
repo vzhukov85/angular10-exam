@@ -1,0 +1,13 @@
+@import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+
+mat-nav-list.list-horizontal mat-list-item {
+  padding: 0;
+  display: inline-block;
+  height: auto;
+  width: auto;
+}
+
+.nav-button {
+    background: #c2185b;
+    border-style: none;
+}
