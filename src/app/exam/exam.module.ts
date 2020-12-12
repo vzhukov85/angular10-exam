@@ -37,6 +37,7 @@ import { TextMaskModule } from 'angular2-text-mask';
     TextMaskModule,
     AppRoutingModule
   ],
+  entryComponents: [TitleInfoComponent],
   exports: [TitleTableComponent, UserInfoComponent, NotFoundComponent]
 })
 export class ExamModule { }
